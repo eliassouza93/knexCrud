@@ -1,7 +1,9 @@
 import { Request, Response, NextFunction } from "express";
-import { knex } from "@/database";
+import { database } from "../database.js";
 import crypto from "node:crypto";
 import bcrypt from "bcrypt";
+
+const knex = database;
 
 export class ControllerUser {
   async index(req: Request, res: Response, next: NextFunction) {
